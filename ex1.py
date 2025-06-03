@@ -7,7 +7,7 @@ import csv
 media = lambda lista : sum(lista)/len(lista)
 def desvio_padrão(lista):
     media_lista = media(lista)
-    dp = sqrt(sum([(i - media_lista) ** 2 for i in lista]))
+    dp = sqrt(sum([(i - media_lista) ** 2 for i in lista])/ len(lista)) 
     return dp
 
 def ler_arquivo(caminho):
@@ -25,4 +25,4 @@ def ler_arquivo(caminho):
 if __name__ == "__main__":
     lista_log = (ler_arquivo("data/logs_treinamento.csv"))
     print(f"Média: {media(lista_log)}")
-    print(f"Desvio Padrão: {desvio_padrão(lista_log):.2f}")
+    print(f"Desvio Padrão: {desvio_padrão(lista_log)}")
